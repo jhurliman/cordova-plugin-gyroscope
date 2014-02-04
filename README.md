@@ -1,4 +1,3 @@
-cordova-gyroscope
-=================
+# org.jhurliman.cordova.gyroscope
 
-Cordova plugin for accessing Gyroscope data
+Plugin documentation: [doc/index.md](doc/index.md)

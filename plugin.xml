@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+           id="org.jhurliman.cordova.gyroscope"
+      version="0.0.1">
+
+    <name>Gyroscope</name>
+    <description>Gyroscope Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,gyro,gyroscope,orientation</keywords>
+    <repo>https://github.com/jhurliman/cordova-gyroscope.git</repo>
+
+    <js-module src="www/Orientation.js" name="Orientation">
+        <clobbers target="Orientation" />
+    </js-module>
+    
+    <js-module src="www/gyroscope.js" name="gyroscope">
+        <clobbers target="navigator.gyroscope" />
+    </js-module>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Gyroscope">
+                <param name="ios-package" value="CDVGyroscope"/>
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/CDVGyroscope.h" />
+        <source-file src="src/ios/CDVGyroscope.m" />
+
+        <framework src="CoreMotion.framework" />
+    </platform>
+
+</plugin>
